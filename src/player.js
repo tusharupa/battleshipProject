@@ -1,5 +1,5 @@
 import { Gameboard } from "./gameboard";
-
+import { Ship } from "./Ship";
 export class Player{
     constructor(title)
     {
@@ -15,6 +15,12 @@ export class Player{
     }
     attack(coords,board){
         board.recieveAttack(coords);
+    }
+
+    placeAutoShips(){
+        this.getBoard().placeShips(new Ship(4),12);
+        this.getBoard().placeShips(new Ship(3),24);
+        this.getBoard().placeShips(new Ship(2),44);
     }
     
 }
